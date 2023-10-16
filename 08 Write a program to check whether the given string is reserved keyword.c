@@ -1,27 +1,26 @@
-#include<stdio.h>
-#include<conio.h>
-#include<string.h>
-void main()
-{
-char a[5][10]={"printf","scanf","if","else","break"};
-char str[10];
-int i,flag;
-clrscr();
-puts("Enter the string :: ");
-gets(str);
-for(i=0;i<strlen(a);i++)
-{
-if(strcmp(str,a[i])==0)
-{
-flag=1;
-break;
-}
-else
-flag=0;
-}
-if(flag==1)
-puts("Reserved Keyword");
-else
-puts("String");
-getch();
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char a[5][10] = {"printf", "scanf", "if", "else", "break"};
+    char str[10];
+    int i, flag = 0;
+
+    printf("Enter the string :: ");
+    gets(str);
+
+    for (i = 0; i < 5; i++) {
+        if (strcmp(str, a[i]) == 0) {
+            flag = 1;
+            break;
+        }
+    }
+
+    if (flag == 1) {
+        printf("Reserved Keyword\n");
+    } else {
+        printf("String\n");
+    }
+
+    return 0;
 }
